@@ -1,17 +1,20 @@
+var express = require('express');
+var port = process.env.PORT || 8080;
+var app = express();
 
-var http = require('http');
-var serveStatic = require('serve-static');
+const http = require('http');
 
-/* https://github.com/expressjs/serve-static#serve-files-with-vanilla-nodejs-http-server
- * Serve up public/ folder */
-var servePublic = serveStatic('public', {'index': ['index.html', 'index.htm']});
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/public'));
 
-http.createServer(function handler(req, res) {
-	console.log(req.method, req.url, 'HTTP'+req.httpVersion, req.headers); // , req is too long
+require('./app/routes.js')(app);
 
-	res.setHeader('Access-Control-Allow-Origin', '127.0.0.1');
-    
-    servePublic(req, res, function nextHandler(req, res){
-    });    
-}).listen(1337, '127.0.0.1');
-console.log('Server running at http://127.0.0.1:1337/');
+const server = http.createServer((request, response) => {
+	if(request.method == 'GET') {
+		if(request.url === '/library') {
+			response.statusCode = 200;
+			response.end('"hello": "world"');
+		}
+	}
+}).listen(port);
+console.log('Server running at http://127.0.0.0:' + port);

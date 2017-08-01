@@ -1,5 +1,5 @@
 
-var app = angular.module('MyAngularApp',[]);
+var app = angular.module('home-library',[]);
 
 //var app = angular.module('MyAngularApp', [], function($httpProvider) {
 //	  // Use x-www-form-urlencoded Content-Type

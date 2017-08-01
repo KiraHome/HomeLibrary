@@ -1,5 +1,5 @@
 {
-	"name": "NodePlusAngularJS",
+	"name": "home-library",
     "version": "0.1.0",
     "description": "NodePlusAngularJS",
     "main": "hello-from-nodejs-server.js",
@@ -13,10 +13,29 @@
         "eclipse",
         "nodeclipse"
     ],
-    "author": "",
-    "license": "MIT",
+    "author": ["Evelin Biber", "Daniel Preszl"],
     "readmeFilename": "README.md",
     "dependencies": {
-        "serve-static": "~1.7.0"
+    	"body-parser": "^1.14.1",
+    	"bower": "^1.4.1",
+    	"express": "^4.12.3",
+    	"karma": "^0.12.33",
+	    "karma-angular": "0.0.6",
+	    "karma-chai": "^0.1.0",
+	    "karma-chai-as-promised": "~0.1.2",
+	    "karma-chrome-launcher": "^0.1.12",
+	    "karma-cli": "0.0.4",
+	    "karma-coverage": "^0.3.1",
+	    "karma-growl-reporter": "^0.1.1",
+	    "karma-html2js-preprocessor": "^0.1.0",
+	    "karma-junit-reporter": "~0.2.1",
+	    "karma-mocha": "^0.1.10",
+	    "karma-ng-html2js-preprocessor": "^0.1.2",
+	    "karma-nyan-reporter": "^0.2.5",
+	    "karma-osx-reporter": "^0.2.0",
+	    "karma-phantomjs-launcher": "^1.0.4",
+	    "karma-requirejs": "^0.2.2",
+	    "karma-sinon-chai": "~0.2.0",
+	    "requirejs": "2.2.0"
     }
 }
